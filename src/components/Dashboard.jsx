@@ -32,22 +32,22 @@ const Dashboard = () => {
         const fetchData = async () => {
             setIsLoading(true);
             try {
-                const approvedResponse = await axios.get('http://localhost:3000/api/businesses/approved');
+                const approvedResponse = await axios.get('https://brsbackendserver.onrender.com/api/businesses/approved');
                 if (approvedResponse.data.length > 0) {
                     setApprovedBusinesses(approvedResponse.data.length);
                 }
 
-                const registeredResponse = await axios.get('http://localhost:3000/api/businesses/total');
+                const registeredResponse = await axios.get('https://brsbackendserver.onrender.com/api/businesses/total');
                 if (registeredResponse.data.total > 0) {
                     setRegisteredBusinesses(registeredResponse.data.total);
                 }
 
-                const rejectedResponse = await axios.get('http://localhost:3000/api/businesses/rejected');
+                const rejectedResponse = await axios.get('https://brsbackendserver.onrender.com/api/businesses/rejected');
                 if (rejectedResponse.data.length > 0) {
                     setRejectedApplications(rejectedResponse.data.length);
                 }
 
-                const usersResponse = await axios.get('http://localhost:3000/api/users');
+                const usersResponse = await axios.get('https://brsbackendserver.onrender.com/api/users');
                 if (usersResponse.data.length > 0) {
                     setRegisteredUsers(usersResponse.data.length);
                 }

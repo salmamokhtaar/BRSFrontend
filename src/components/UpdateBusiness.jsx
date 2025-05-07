@@ -73,7 +73,7 @@ function UpdateBusiness({ business, onUpdate }) {
         });
 
         try {
-            const res = await axios.put(`http://localhost:3000/api/businesses/${business._id}`, formDataToSend, {
+            const res = await axios.put(`https://brsbackendserver.onrender.com/api/businesses/${business._id}`, formDataToSend, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -145,7 +145,7 @@ function UpdateBusiness({ business, onUpdate }) {
                             {Array.from(documents).map((doc, index) => (
                                 <div key={index} className="text-sm text-gray-600">
                                     {typeof doc === 'string' ? (
-                                        <a href={`http://localhost:3000/${doc}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                                        <a href={`https://brsbackendserver.onrender.com/${doc}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                             Document {index + 1}
                                         </a>
                                     ) : (
