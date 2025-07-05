@@ -145,13 +145,14 @@ function BusinessType() {
     <div id="business-types" className="section relative py-20 bg-gray-50">
       <div className="container xl:max-w-6xl mx-auto px-4">
         <header className="text-center mx-auto mb-16 lg:px-20">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-800">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Business Registration Types
           </h2>
+        
           <div className="w-full max-w-lg mx-auto mb-6">
             <div className="h-1 mx-auto bg-blue-600 w-40 opacity-75 my-0 py-0 rounded-full"></div>
           </div>
-          <p className="text-gray-600 leading-relaxed font-light text-base sm:text-xl mx-auto max-w-2xl px-2">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Choose the right structure for your business to ensure optimal legal protection and tax benefits.
           </p>
         </header>
