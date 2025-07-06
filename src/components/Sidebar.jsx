@@ -41,8 +41,8 @@ const Sidebar = () => {
 
     // Function to handle logout
     const handleLogout = () => {
-        localStorage.removeItem('token'); // Remove the token from localStorage
-        navigate('/login'); // Redirect to login page
+        localStorage.removeItem('token');
+        navigate('/login');
     };
 
     return (
@@ -61,18 +61,17 @@ const Sidebar = () => {
             </div>
 
             {/* Sidebar */}
-            <aside className={`fixed inset-y-0 left-0 w-[220px] shadow-2xl  text-blue-600 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out md:relative md:translate-x-0 z-30`}>
-        
-
+            <aside className={`fixed inset-y-0 left-0 w-[220px] bg-white shadow-2xl text-blue-600 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out md:relative md:translate-x-0 z-30`}>
                 {/* Navigation */}
                 <div className="text-xs uppercase text-blue-700 font-semibold px-6 mt-6 mb-3">MAIN NAVIGATION</div>
-                <nav className="flex flex-col">
+                <nav className="flex flex-col h-full">
                     {/* Dashboard */}
                     <Link
                         to="/dashboard"
-                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 ${
+                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 hover:bg-blue-50 ${
                             isActive('/dashboard') && location.pathname === '/dashboard'
-                              
+                                ? 'border-blue-600 bg-blue-50 text-blue-700'
+                                : 'border-transparent text-gray-600 hover:text-blue-600'
                         }`}
                         onClick={closeSidebar}
                     >
@@ -83,9 +82,10 @@ const Sidebar = () => {
                     {/* All Businesses */}
                     <Link
                         to="/dashboard/view-businesses"
-                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 ${
+                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 hover:bg-blue-50 ${
                             isActive('/dashboard/view-businesses')
-                               
+                                ? 'border-blue-600 bg-blue-50 text-blue-700'
+                                : 'border-transparent text-gray-600 hover:text-blue-600'
                         }`}
                         onClick={closeSidebar}
                     >
@@ -96,9 +96,10 @@ const Sidebar = () => {
                     {/* Approved */}
                     <Link
                         to="/dashboard/approved-registrations"
-                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 ${
+                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 hover:bg-blue-50 ${
                             isActive('/dashboard/approved-registrations')
-                              
+                                ? 'border-blue-600 bg-blue-50 text-blue-700'
+                                : 'border-transparent text-gray-600 hover:text-blue-600'
                         }`}
                         onClick={closeSidebar}
                     >
@@ -109,9 +110,10 @@ const Sidebar = () => {
                     {/* Rejected */}
                     <Link
                         to="/dashboard/rejected-registrations"
-                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 ${
+                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 hover:bg-blue-50 ${
                             isActive('/dashboard/rejected-registrations')
-                             
+                                ? 'border-blue-600 bg-blue-50 text-blue-700'
+                                : 'border-transparent text-gray-600 hover:text-blue-600'
                         }`}
                         onClick={closeSidebar}
                     >
@@ -124,9 +126,10 @@ const Sidebar = () => {
                     {/* Manage Users */}
                     <Link
                         to="/dashboard/manage-users"
-                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 ${
+                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 hover:bg-blue-50 ${
                             isActive('/dashboard/manage-users')
-                            
+                                ? 'border-blue-600 bg-blue-50 text-blue-700'
+                                : 'border-transparent text-gray-600 hover:text-blue-600'
                         }`}
                         onClick={closeSidebar}
                     >
@@ -137,9 +140,10 @@ const Sidebar = () => {
                     {/* Analytics & Reports */}
                     <Link
                         to="/dashboard/generate-reports"
-                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 ${
+                        className={`flex items-center py-3 px-6 transition duration-200 border-l-4 hover:bg-blue-50 ${
                             isActive('/dashboard/generate-reports')
-                           
+                                ? 'border-blue-600 bg-blue-50 text-blue-700'
+                                : 'border-transparent text-gray-600 hover:text-blue-600'
                         }`}
                         onClick={closeSidebar}
                     >
@@ -151,7 +155,7 @@ const Sidebar = () => {
                     <div className="mt-auto">
                         <button
                             onClick={handleLogout}
-                            className="flex items-center w-full py-3 px-6 text-black  transition duration-200"
+                            className="flex items-center w-full py-3 px-6 text-gray-600 hover:text-red-600 hover:bg-red-50 transition duration-200"
                         >
                             <FontAwesomeIcon icon={faSignOutAlt} className="text-lg mr-3" />
                             <span className="text-sm">Logout</span>
