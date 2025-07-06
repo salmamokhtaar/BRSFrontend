@@ -12,7 +12,6 @@ import {
     Title
 } from 'chart.js';
 
-// Register the required components
 ChartJS.register(
     LineElement,
     PointElement,
